@@ -1,0 +1,6 @@
+!.gitignore
+Output/
+*.iss
+!sb-setup.iss
+install.exe
+*.~*
