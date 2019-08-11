@@ -144,7 +144,7 @@ Source: "install.exe"; DestDir: "{app}"; Flags: deleteafterinstall;
 ;Flags: dontcopy;
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
-Source: "..\Release\*"; DestDir: "{app}\"; Flags: ignoreversion recursesubdirs; 
+Source: "..\Release\*"; Excludes: ".git\*,.gitignore,data\settings.ini"; DestDir: "{app}\"; Flags: ignoreversion recursesubdirs; 
 
 [Dirs]
 ;Name: "{app}"; Components: program
