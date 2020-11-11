@@ -17,7 +17,7 @@ SolidCompression=yes
 VersionInfoVersion=1.00
 ShowUndisplayableLanguages=yes
 PrivilegesRequired=none
-LicenseFile=..\Release\eula.txt
+LicenseFile=..\..\Release\eula.txt
 UsePreviousAppDir=no
 
 [Languages]
@@ -139,13 +139,13 @@ Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescrip
 ;Name: "lang\nl"; Description: "Dutch"; Types: full
             
 [Files]
-Source: "..\Release\sanny.exe"; DestDir: "{app}"; Flags: ignoreversion;
-Source: "..\Release\EULA.txt"; DestDir: "{app}"; Flags: ignoreversion;
+Source: "..\..\Release\sanny.exe"; DestDir: "{app}"; Flags: ignoreversion;
+Source: "..\..\Release\EULA.txt"; DestDir: "{app}"; Flags: ignoreversion;
 Source: "install.exe"; DestDir: "{app}"; Flags: deleteafterinstall;
 ;Flags: dontcopy;
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
-Source: "..\Release\*"; Excludes: ".git\*,.gitignore,data\settings.ini,*.md"; DestDir: "{app}\"; Flags: ignoreversion recursesubdirs; 
+Source: "..\..\Release\*"; Excludes: ".git\*,.gitignore,data\settings.ini,*.md"; DestDir: "{app}\"; Flags: ignoreversion recursesubdirs; 
 
 [Dirs]
 ;Name: "{app}"; Components: program
