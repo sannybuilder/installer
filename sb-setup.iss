@@ -3,7 +3,7 @@
 
 [Setup]
 AppName=Sanny Builder 3
-AppVerName=Sanny Builder 3.2.4
+AppVerName=Sanny Builder 3.6.0
 AppPublisherURL=https://sannybuilder.com
 AppSupportURL=https://sannybuilder.com
 AppUpdatesURL=https://sannybuilder.com
@@ -17,7 +17,8 @@ SolidCompression=yes
 VersionInfoVersion=1.00
 ShowUndisplayableLanguages=yes
 PrivilegesRequired=none
-LicenseFile=..\Release\eula.txt
+LicenseFile=..\..\Release\eula.txt
+UsePreviousAppDir=no
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -27,12 +28,12 @@ Name: "german"; MessagesFile: "compiler:Languages\German.isl"
 Name: "polish"; MessagesFile: "compiler:Languages\Polish.isl"
 Name: "russian"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "italian"; MessagesFile: "compiler:Languages\italian.isl"
-Name: "portuguese"; MessagesFile: "compiler:Languages\Portuguese.isl"
+Name: "portuguese"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 Name: "spanish"; MessagesFile: "compiler:Languages\Spanish.isl"
-Name: "hungarian"; MessagesFile: "compiler:Languages\Hungarian.isl"
 Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl"
 Name: "finnish"; MessagesFile: "compiler:Languages\Finnish.isl"
 Name: "czech"; MessagesFile: "compiler:Languages\Czech.isl"
+Name: "turkish"; MessagesFile: "compiler:Languages\Turkish.isl"
 
 [CustomMessages]
 
@@ -138,13 +139,13 @@ Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescrip
 ;Name: "lang\nl"; Description: "Dutch"; Types: full
             
 [Files]
-Source: "..\Release\sanny.exe"; DestDir: "{app}"; Flags: ignoreversion;
-Source: "..\Release\EULA.txt"; DestDir: "{app}"; Flags: ignoreversion;
+Source: "..\..\Release\sanny.exe"; DestDir: "{app}"; Flags: ignoreversion;
+Source: "..\..\Release\EULA.txt"; DestDir: "{app}"; Flags: ignoreversion;
 Source: "install.exe"; DestDir: "{app}"; Flags: deleteafterinstall;
 ;Flags: dontcopy;
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
-Source: "..\Release\*"; Excludes: ".git\*,.gitignore,data\settings.ini"; DestDir: "{app}\"; Flags: ignoreversion recursesubdirs; 
+Source: "..\..\Release\*"; Excludes: ".git\*,.gitignore,data\settings.ini,*.md"; DestDir: "{app}\"; Flags: ignoreversion recursesubdirs; 
 
 [Dirs]
 ;Name: "{app}"; Components: program
@@ -190,7 +191,7 @@ begin
     ParamLine := ParamLine + '-c ';
 
   if ActiveLanguage = 'english' then
-    ParamLine := ParamLine + '-l 2057'
+    ParamLine := ParamLine + '-l 1033'
   else
   if ActiveLanguage = 'dutch' then
     ParamLine := ParamLine + '-l 1043'
@@ -227,6 +228,8 @@ begin
   else
   if ActiveLanguage = 'czech' then
     ParamLine := ParamLine + '-l 1029';
+  if ActiveLanguage = 'turkish' then
+    ParamLine := ParamLine + '-l 1055';
 
   Exec(ExpandConstant('{app}\install.exe'), ParamLine, ExpandConstant('{app}'), SW_HIDE, ewWaitUntilTerminated, ResultCode);
 
